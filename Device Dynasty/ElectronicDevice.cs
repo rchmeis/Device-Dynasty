@@ -4,14 +4,17 @@ using System.Text;
 
 namespace Device_Dynasty
 {
-    /// <summary>
-    /// Represents a generic electronic device with brand, model, and battery specifications.
-    /// </summary>
-    internal class ElectronicDevice
+   /// <summary>
+   /// Represents an abstract base class for electronic devices, providing common properties for brand, model, and
+   /// battery capacity.
+   /// </summary>
+   /// <remarks>This class is intended to be inherited by specific electronic device types, enabling consistent
+   /// management of device information across derived classes.</remarks>
+    abstract class ElectronicDevice
     {
-        private string _brand;
-        private string _model;
-        private int _batteryCapacity; // in mAh
+        protected string _brand;
+        protected string _model;
+        protected int _batteryCapacity; // in mAh
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ElectronicDevice"/> class.
@@ -53,12 +56,11 @@ namespace Device_Dynasty
         }
 
         /// <summary>
-        /// Returns a formatted string representing the device's details.
+        /// Displays the device's brand, model, and battery capacity in milliampere-hours (mAh) to the console.
         /// </summary>
-        /// <returns>A string containing the brand, model, and battery capacity.</returns>
-        public override string ToString()
+        public void GetDeviceDetails()
         {
-            return $"Brand: {Brand}, Model: {Model}, Battery Capacity: {BatteryCapacity} mAh"; 
+            Console.WriteLine($"Brand: {Brand}, Model: {Model}, Battery Capacity: {BatteryCapacity} mAh"); 
         }
     }
 }

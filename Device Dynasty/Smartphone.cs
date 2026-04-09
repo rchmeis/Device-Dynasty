@@ -33,12 +33,14 @@ namespace Device_Dynasty
             set { _operatingSystem = value; }
         }
         /// <summary>
-        /// Generates a string containing all smartphone specifications.
+        /// Displays detailed information about the smartphone, including its operating system, to the console.
         /// </summary>
-        /// <returns>A multi-line formatted string including brand, model, OS, and battery capacity.</returns>
-        public string GetSmartphoneDetails()
+        /// <remarks>This method is intended for informational or diagnostic purposes. It writes device
+        /// details and the operating system to the standard output and does not return a value.</remarks>
+        public void GetSmartphoneDetails()
         {
-            return $"Smartphone Details:\nBrand: {Brand}\nModel: {Model}\nOperating System: {OperatingSystem}\nBattery Capacity: {BatteryCapacity} mAh";
+            GetDeviceDetails();
+            Console.WriteLine($"\nOperating system: {OperatingSystem}");
         }
     }
 }

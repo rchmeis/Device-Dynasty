@@ -13,7 +13,7 @@ namespace Device_Dynasty
         double _screenSize; // in inches        
 
         /// <summary>
-        /// Initialize a new instance of <see cref="Laptop"/> class with specified screen size, brand, model, and battery capacity."/>
+        /// Initializes a new instance of <see cref="Laptop"/> class with specified screen size, brand, model, and battery capacity."/>
         /// </summary>
         /// <param name="screensize">The screen size of the laptop in inches</param>
         /// <param name="brand">The manufacturer or brand name of the laptop.</param>
@@ -31,18 +31,16 @@ namespace Device_Dynasty
             get { return _screenSize; }
             set { _screenSize = value; }
         }
-        /// <summary>
-        /// Returns a formatted string representing the device's details.
-        /// </summary>
-        /// <returns>A string containing the brand, model, and battery capacity.</returns>
-        public string GetLaptopDetails()
+         /// <summary>
+         /// Displays the details of the laptop, including the screen size.
+         /// </summary>
+         /// <remarks>This method retrieves device details and outputs the screen size to the console. Ensure
+         /// that the device details are available before calling this method.</remarks>
+        public void GetLaptopDetails()
         {
-            return $"Laptop Details:\nBrand: {Brand}\nModel: {Model}\nScreen Size: {ScreenSize} inches\nBattery Capacity: {BatteryCapacity} mAh";
+            GetDeviceDetails();
+            Console.WriteLine($"\nScreen Size: {ScreenSize}");
         }
-
-        //public override string ToString()
-        //{
-        //    return $"Laptop Details:\nBrand: {Brand}\nModel: {Model}\nScreen Size: {ScreenSize} inches\nBattery Capacity: {BatteryCapacity} mAh";
-        //}
+  
     }
 }
